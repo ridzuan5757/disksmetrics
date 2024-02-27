@@ -1,0 +1,78 @@
+type: disksusagemetrics
+
+status:
+  class: receiver
+  stability:
+    development: [metrics]
+
+sem_conv_version: 1.9.0
+
+attributes:
+  mount.point:
+    description: Location in the directory where the filesystem is mounted.
+    type: string
+
+metrics:
+  disk.total:
+    enabled: true
+    description: Total size of the file system.
+    unit: byte
+    gauge:
+      value_type: int
+
+  disk.used:
+    enabled: true
+    description: Amount of space used on the file system.
+    unit: byte
+    gauge:
+      value_type: int
+
+  disk.free:
+    enabled: true
+    description: Amount of space available on the file system.
+    unit: byte
+    gauge:
+      value_type: int
+
+  disk.utilization:
+    enabled: true
+    description: Percentage of disk usage for the file system.
+    unit: utilization
+    gauge:
+      value_type: double
+
+  mount.total:
+    enabled: true
+    description: Total size of the file system.
+    unit: byte
+    gauge:
+      value_type: int
+    attributes: [mount.point]
+
+  mount.used:
+    enabled: true
+    description: Amount of space used on the file system.
+    unit: byte
+    gauge:
+      value_type: int
+    attributes: [mount.point]
+
+  mount.free:
+    enabled: true
+    description: Amount of space available on the file system.
+    unit: byte
+    gauge:
+      value_type: int
+    attributes: [mount.point]
+
+  mount.utilization:
+    enabled: true
+    description: Percentage of disk usage for the file system.
+    unit: utilization
+    gauge:
+      value_type: double
+    attributes: [mount.point]
+
+  
+    
+

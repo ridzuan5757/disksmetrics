@@ -1,0 +1,16 @@
+receivers:
+  disksusagemetrics:
+    verbose: true
+
+processors:
+  nop:
+
+exporters:
+  nop:
+
+service:
+  pipelines:
+    metrics:
+      receivers: [disksusagemetrics]
+      processors: [nop]
+      exporters: [nop]

@@ -1,0 +1,37 @@
+default:
+all_set:
+  metrics:
+    disk.free:
+      enabled: true
+    disk.total:
+      enabled: true
+    disk.used:
+      enabled: true
+    disk.utilization:
+      enabled: true
+    mount.free:
+      enabled: true
+    mount.total:
+      enabled: true
+    mount.used:
+      enabled: true
+    mount.utilization:
+      enabled: true
+none_set:
+  metrics:
+    disk.free:
+      enabled: false
+    disk.total:
+      enabled: false
+    disk.used:
+      enabled: false
+    disk.utilization:
+      enabled: false
+    mount.free:
+      enabled: false
+    mount.total:
+      enabled: false
+    mount.used:
+      enabled: false
+    mount.utilization:
+      enabled: false

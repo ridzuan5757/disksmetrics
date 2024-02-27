@@ -1,0 +1,27 @@
+image: golang:latest
+
+stages:
+  - tidy
+  - test
+  - report
+
+tidy:
+  stage: tidy
+  script:
+    - make tidy
+
+test:
+  stage: test
+  script:
+    - make test
+  coverage: /^coverage:\s(\d+(?:\.\d+)?%)/
+  artifacts:
+    name: $CI_JOB_NAME/coverage.out
+    paths:
+      - coverage.out
+    expire_in: 1 day
+
+report:
+  stage: report
+  script:
+    - make report
